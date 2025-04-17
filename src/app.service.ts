@@ -13,4 +13,8 @@ export class AppService {
   async getMessages(): Promise<Chat[]> {
     return await this.prisma.chat.findMany();
   }
+
+  async deleteMessage() {
+    await this.prisma.chat.deleteMany();
+  }
 }
