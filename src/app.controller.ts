@@ -20,4 +20,9 @@ export class AppController {
     const messages = await this.appService.getMessages();
     res.json(messages);
   }
+
+  @Get('/api/chat/clear')
+  async deleteMessages() {
+    await this.appService.deleteMessage();
+  }
 }
