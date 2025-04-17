@@ -1,6 +1,6 @@
 const app = () => {
-  // поменят url
-  const socket = io('http://localhost:3000');
+  const url = 'https://nur-chat.onrender.com';
+  const socket = io(url);
   const msgInput = document.querySelector('.message-input');
   const msgList = document.querySelector('.messages-list');
   const sendBtn = document.querySelector('.send-btn');
@@ -9,7 +9,7 @@ const app = () => {
 
   const getMessages = async () => {
     try {
-      const { data } = await axios.get('http://localhost:3000/api/chat');
+      const { data } = await axios.get(`${url}/api/chat`);
 
       renderMessages(data);
 
